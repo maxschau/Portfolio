@@ -17,14 +17,14 @@ const useStyles = makeStyles(theme => ({
         flexGrow: 1,
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: '5%',
+        marginTop: '1%',
         width: "50%",
     },
     root2: {
         flexGrow: 1,
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: '5%',
+        marginTop: '1%',
         width: "90%",
     },
     header: {
