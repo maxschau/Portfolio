@@ -10,6 +10,10 @@ const useStyles = makeStyles(theme => ({
     },
     image: {
         width: "30%",
+        opacity: "70%",
+        '&:hover': {
+            opacity: '100%'
+        },
     }
 }));
 

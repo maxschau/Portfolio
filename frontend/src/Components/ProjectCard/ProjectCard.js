@@ -4,6 +4,8 @@ import Grid from "@material-ui/core/Grid";
 import Harmoni from "../../Assets/Images/Harmoni.png";
 import Typography from '@material-ui/core/Typography';
 import ImageLink from "../ImageLink/ImageLink.js";
+import {useDarkMode} from "../useDarkMode/useDarkMode";
+import {lightTheme, darkTheme} from "../Theme/Themes";
 
 
 const baseURL = "../../Assets/Images/";
@@ -13,14 +15,10 @@ const useStyles = makeStyles(theme => ({
         boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
         borderRadius: '25px',
         height: "300px",
-        opacity: '80%',
+        opacity: '100%',
         textAlign: 'center',
-        textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
         fontFamily: "Vollkorn, serif",
         width: "100%",
-        '&:hover': {
-            opacity: '100%'
-        },
     },
     box: {
         height: "200px",
@@ -48,6 +46,10 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function ProjectCard(props) {
+    const [theme, themeToggler, mountedComponent] = useDarkMode();
+    console.log("Theme: " + theme);
+
+    const themeMode = theme === 'light' ? lightTheme : darkTheme;
     const imageURL =  require("../../Assets/Images/" + props.image);
     const classes = useStyles();
     return (
@@ -63,7 +65,7 @@ function ProjectCard(props) {
                     <Typography variant="subtitle1" className={classes.description}>{props.description} </Typography>
                 </Grid>
                 <Grid item xs={6} md={6}> 
-                    <ImageLink image="GitHub.png" link={props.link}/>
+                    <ImageLink image={theme == "dark" ? "GitHub2.png" : "GitHub.png"} link={props.link} className={classes.link}/>
                 </Grid>
             </Grid>
             
