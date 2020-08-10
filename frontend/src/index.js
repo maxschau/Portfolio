@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {HashRouter, Route, Redirect, Switch} from 'react-router-dom';
-import App from './App';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import FrontPage from "./Views/FrontPage";
 import NavBar from "./Components/NavBar/NavBar";
@@ -13,7 +12,6 @@ ReactDOM.render(
             <NavBar />
             <Switch>
                 <Route exact path="/" component={FrontPage} />
-              
             </Switch>
         </div>
     </HashRouter>
