@@ -3,8 +3,34 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 import Typography from '@material-ui/core/Typography';
 import ImageLink from "../ImageLink/ImageLink.js";
+import { Box, Divider } from '@material-ui/core';
 
-
+const getColor = (color) => {
+    let result = "transparent";
+    switch(color) {
+        case "TypeScript":
+            result = "#cb997e";
+            break;
+        case "JavaScript":
+            result="#eddcd2";
+            break;
+        case "React":
+            result="#fff1e6";
+            break;
+        case "Java":
+            result="#f0efeb";
+            break;
+        case "Node":
+            result="#ddbea9";
+            break;
+        case "MySQL":
+            result = "#a5a58d";
+            break;
+        default:
+            result = "transparent";
+    }
+    return result;
+}
 
 function ProjectCard(props) {
 
@@ -28,6 +54,23 @@ function ProjectCard(props) {
                         <a className={classes.link} href={props.link2} target="_blank">Article</a>
                     </div>}
                 </Grid>
+                <Grid item xs={12}>
+                    <Divider />
+                </Grid>
+                <Grid item xs={12} style={{marginTop: "8px", marginLeft: "8px"}}>
+                    <Grid container>
+                        {props.tags.map((tag) => {
+                            return(
+                                <Grid item xs={3} style={{marginRight: "4px"}}>
+                                    <Box style={{backgroundColor: getColor(tag)}} className={classes.tag}>
+                                        {tag}
+                                    </Box>
+                                </Grid>
+                            )
+                        })}
+                    </Grid>
+                </Grid>
+           
             </Grid>
 
 
@@ -72,6 +115,10 @@ const useStyles = makeStyles(theme => ({
     },
     link: {
         color: "black",
+    },
+    tag: {
+        width: "100%",
+        borderRadius: "5px",
     }
 }));
 

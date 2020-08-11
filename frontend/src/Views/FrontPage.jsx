@@ -31,7 +31,7 @@ function FrontPage() {
                             .pauseFor(2000)
                             .deleteChars(18)
                             .start()
-                        typewriter.typeString("an developer with a high passion for development")
+                        typewriter.typeString("an developer passionated about coding")
                             .start()
                     }}
                 />
@@ -65,7 +65,7 @@ function FrontPage() {
                 {projects.map((project) => {
                     return (
                         <Grid item md={6}>
-                            <ProjectCard link2={project.link2} title={project.title} disabled={project.disabled} link={project.link} image={project.image} description={project.description} />
+                            <ProjectCard tags={project.tags} link2={project.link2} title={project.title} disabled={project.disabled} link={project.link} image={project.image} description={project.description} />
                         </Grid>
                     )
                 })}
@@ -104,15 +104,6 @@ const useStyles = makeStyles(theme => ({
         width: "100%",
         marginLeft: "auto",
         marginRight: "auto",
-        ['@media (max-width:600px)']: { // eslint-disable-line no-useless-computed-key
-            width: "100%",
-            height: "300pxpx",
-            objectFit: "cover",
-            display: "block",
-            marginLeft: "auto",
-            marginRight: "auto",
-        }
-
     },
     textBox: {
         backgroundColor: "#7f7f7f",
@@ -150,14 +141,9 @@ const useStyles = makeStyles(theme => ({
     },
     headline: {
         margin: "1% auto auto auto",
-        width: "50%",
+        width: "90%",
         display: "block",
         fontSize: "20px",
-        ['@media (max-width:600px)']: {
-            margin: "auto",
-            width: "90%",
-            display: "block"
-        }
     }
 }));
 
