@@ -7,6 +7,8 @@ import { Typography } from '@material-ui/core';
 import PhoneIcon from '@material-ui/icons/Phone';
 import Typewriter from 'typewriter-effect';
 import MailOutlineRoundedIcon from '@material-ui/icons/MailOutlineRounded';
+import Divider from '@material-ui/core/Divider';
+import { projects } from "../projects.js";
 
 
 
@@ -18,7 +20,6 @@ function FrontPage() {
 
     const matches = useMediaQuery('(min-width:600px)');
     const Portrait = require("../Assets/Images/Portrett.jpg");
-
     const classes = useStyles();
     return (
         <div>
@@ -42,8 +43,13 @@ function FrontPage() {
                 </Grid>
                 <Grid item md={8} className={classes.textBox}>
                     <Typography variant="h4" className={classes.header2}>
-                        Full-stack-developer <br /> <br />Currently studying Computer Engineering at Norges teknisk-naturvitenskapelige universitet (NTNU) in Trondheim, Norway.
+                        Full-stack-developer
                     </Typography>
+                    <Divider />
+                    <Typography variant="h4" className={classes.header2}>
+                        Currently studying Computer Engineering at Norges teknisk-naturvitenskapelige universitet (NTNU) in Trondheim, Norway.
+                    </Typography>
+                    <Divider />
                     <div className={classes.linksbox}>
                         <a className={classes.links} href="mailto:max.torre.schau@gmail.com" ><MailOutlineRoundedIcon fontSize={"large"} /></a>
                         <a className={classes.links} href="tel:+4791782159"><PhoneIcon fontSize={"large"} /></a>
@@ -56,26 +62,13 @@ function FrontPage() {
                 <Grid item md={12}>
                     <Typography variant="h4" className={classes.header}>Projects:</Typography>
                 </Grid>
-                <Grid item md={6} >
-                    <ProjectCard title={"Dissimilis"} disabled={true} link={"https://github.com/maxschau/harmoni"} image={"dissmilis.svg"} description={"During the summer of 2020 I worked as a summer intern at Experis Ciber in Oslo. Me and 5 others developed a web-application to use for color-notation. "} />
-                </Grid>
-                <Grid item md={6} >
-                    <ProjectCard title={"Harmoni"} disabled={false} link={"https://github.com/maxschau/harmoni"} image={"Harmoni.png"} description={"A fun application created in the subject TDAT2003 Systemutvikling 2 med web-applikasjoner"} />
-                </Grid>
-                <Grid item md={6}>
-                    <ProjectCard title={"TwoPhase"} disabled={false} link={"https://github.com/maxschau/TwoPhaseCommit"} image={"TwoPhase.png"} description={"A visualizer of the algorithm TwoPhaseCommit showcasing its steps and features"} />
-                </Grid>
-                <Grid item md={6}>
-                    <ProjectCard title={"Squiggle"} disabled={false} link={"https://github.com/maxschau/squiggle"} image={"Squiggle.png"} description={"A game developed in the subject 'Databaser med videregående programmering'. Similar to drawsomething, but created in Java"} />
-                </Grid>
-                <Grid item md={6}>
-                    <ProjectCard title={"Portfolio"} disabled={false} link={"https://github.com/maxschau/Portfolio"} image={"Portfolio.png"} description={"Portfolio developed to showcase the different projects I have been working on (individual and in teams). "} />
-                </Grid>
-                <Grid item md={6}>
-                    <ProjectCard title={"Community-News"} disabled={false} link={"https://github.com/maxschau/Community-News"} image={"News.png"} description={"Webapplication created in React as a school project. The webpage displays the different articles, and lets you create new ones. Connected to MySQL-database."} />
-                </Grid>
-
-
+                {projects.map((project) => {
+                    return (
+                        <Grid item md={6}>
+                            <ProjectCard link2={project.link2} title={project.title} disabled={project.disabled} link={project.link} image={project.image} description={project.description} />
+                        </Grid>
+                    )
+                })}
             </Grid>
         </div>
     )
@@ -98,7 +91,7 @@ const useStyles = makeStyles(theme => ({
     },
     header: {
         textAlign: "center",
-        fontFamily: "'Montserrat', sans-serif;",
+        fontFamily: "'Roboto', sans-serif",
     },
     imageBox: {
         marginTop: "5%",
@@ -143,7 +136,7 @@ const useStyles = makeStyles(theme => ({
         fontSize: "20px",
         textAlign: "center",
         padding: "20px",
-        fontFamily: "'Montserrat', sans-serif;",
+        fontFamily: "'Roboto', sans-serif",
         color: "white",
     },
     links: {

@@ -24,6 +24,9 @@ function ProjectCard(props) {
                 </Grid>
                 <Grid item xs={6} md={6} style={{ textAlign: "left", marginLeft: "8px" }}>
                     <ImageLink disabled={props.disabled} image={"GitHub.png"} link={props.link} className={classes.link} />
+                    {!props.link2 ? <></> : <div>
+                        <a className={classes.link} href={props.link2} target="_blank">Article</a>
+                    </div>}
                 </Grid>
             </Grid>
 
@@ -39,7 +42,7 @@ const useStyles = makeStyles(theme => ({
         height: "auto",
         opacity: '100%',
         textAlign: 'center',
-        fontFamily: "Vollkorn, serif",
+        fontFamily: "'Roboto', sans-serif",
         width: "100%",
         padding: "4px",
     },
@@ -67,6 +70,9 @@ const useStyles = makeStyles(theme => ({
             fontSize: "15px",
         }
     },
+    link: {
+        color: "black",
+    }
 }));
 
 export default ProjectCard;
