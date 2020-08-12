@@ -141,9 +141,12 @@ const useStyles = makeStyles(theme => ({
     },
     headline: {
         margin: "1% auto auto auto",
-        width: "90%",
+        width: "50%",
         display: "block",
         fontSize: "20px",
+        '@media (max-width:600px)': {
+            width: "90%",
+        }
     }
 }));
 
