@@ -54,6 +54,7 @@ function ProjectCard(props) {
                         <a className={classes.link} href={props.link2} target="_blank">Article</a>
                     </div>}
                 </Grid>
+                {/*}
                 <Grid item xs={12}>
                     <Divider />
                 </Grid>
@@ -70,6 +71,7 @@ function ProjectCard(props) {
                         })}
                     </Grid>
                 </Grid>
+                    {*/}
            
             </Grid>
 
