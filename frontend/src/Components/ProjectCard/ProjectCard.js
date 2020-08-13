@@ -3,39 +3,43 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 import Typography from '@material-ui/core/Typography';
 import ImageLink from "../ImageLink/ImageLink.js";
-import { Box, Divider } from '@material-ui/core';
+import { Box, Divider, useMediaQuery } from '@material-ui/core';
 
-const getColor = (color) => {
-    let result = "transparent";
-    switch(color) {
-        case "TypeScript":
-            result = "#cb997e";
-            break;
-        case "JavaScript":
-            result="#eddcd2";
-            break;
-        case "React":
-            result="#fff1e6";
-            break;
-        case "Java":
-            result="#f0efeb";
-            break;
-        case "Node":
-            result="#ddbea9";
-            break;
-        case "MySQL":
-            result = "#a5a58d";
-            break;
-        default:
-            result = "transparent";
-    }
-    return result;
-}
+
 
 function ProjectCard(props) {
 
     const imageURL = require("../../Assets/Images/" + props.image);
     const classes = useStyles();
+    const matches = useMediaQuery('(min-width:900px)'); //if true => bigger than 600px
+
+
+    return (
+        <Box width="100%" display="flex" padding="8px" mb="40px" mt="16px">
+            <Box flex="1" display="flex" mr={matches ? "0px" : "12px"}>
+                <img src={imageURL} alt={"Hello"} className={classes.image} />
+            </Box>
+            <Box flex="4" textAlign="left" >
+                <Typography variant="h5" style={{ color: "#281862" }}>
+                    {props.title}
+                </Typography>
+                <Box textAlign="left">
+                    <Typography variant="body1">
+                        {props.description}
+                    </Typography>
+                </Box>
+                <Box textAlign="left">
+                    <ImageLink disabled={props.disabled} image={"GitHub.png"} link={props.link} className={classes.link} />
+                    {!props.link2 ? <></> : <div>
+                        <a className={classes.link} href={props.link2} target="_blank">Article</a>
+                    </div>}
+                </Box>
+
+            </Box>
+        </Box>
+    )
+
+    /*
     return (
         <div className={classes.container}>
             <Grid container spacing={12}>
@@ -54,7 +58,7 @@ function ProjectCard(props) {
                         <a className={classes.link} href={props.link2} target="_blank">Article</a>
                     </div>}
                 </Grid>
-                {/*}
+                
                 <Grid item xs={12}>
                     <Divider />
                 </Grid>
@@ -71,13 +75,13 @@ function ProjectCard(props) {
                         })}
                     </Grid>
                 </Grid>
-                    {*/}
            
-            </Grid>
+            </Grid >
 
 
-        </div>
+        </div >
     )
+    */
 }
 
 const useStyles = makeStyles(theme => ({
@@ -97,9 +101,13 @@ const useStyles = makeStyles(theme => ({
     image: {
         objectFit: "cover",
         height: "120px",
+        width: "120px",
         ['@media (max-width:600px)']: { // eslint-disable-line no-useless-computed-key
-            heigth: "50%",
+            position: "relative",
+            top: "50%",
+            transform: "translateY(-50%)"
         }
+
     },
     title: {
         fontSize: "40px",
@@ -117,6 +125,11 @@ const useStyles = makeStyles(theme => ({
     },
     link: {
         color: "black",
+        opacity: "70%",
+        fontWeight: "bold",
+        '&:hover': {
+            opacity: '100%'
+        },
     },
     tag: {
         width: "100%",

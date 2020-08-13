@@ -10,9 +10,9 @@ import CV from "../../Assets/Documents/Max_CV.pdf";
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
-        margin: "1px",
     },
     menuButton: {
+        color: "white",
         marginRight: theme.spacing(2),
         '&:hover': {
             backgroundColor: "#C4C4C4"
@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     },
     title: {
         flexGrow: 1,
-        color: "black",
+        color: "white",
         ['@media (max-width:600px)']: { // eslint-disable-line no-useless-computed-key
             fontSize: "25px",
         }
@@ -32,7 +32,7 @@ function NavBar() {
 
     return (
         <div className={classes.root}>
-            <AppBar position="static" style={{ backgroundColor: "#C4C4C4" }}>
+            <AppBar position="static" style={{ backgroundColor: "#281862" }}>
                 <Toolbar>
                     <Typography variant="h4" className={classes.title}>
                         MTS
