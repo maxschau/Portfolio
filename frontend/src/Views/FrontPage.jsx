@@ -23,20 +23,6 @@ function FrontPage() {
     const classes = useStyles();
     return (
         <div>
-            <div className={classes.headline}>
-                <Typewriter
-                    className={classes.headline}
-                    onInit={(typewriter) => {
-                        typewriter.typeString('Max Torre Schau, a designing genius')
-                            .pauseFor(2000)
-                            .deleteChars(18)
-                            .start()
-                        typewriter.typeString("an developer passionated about coding")
-                            .start()
-                    }}
-                />
-            </div>
-
             <Grid container className={matches ? classes.root : classes.root2}>
                 <Grid item md={4}>
                     <img src={Portrait} alt="Portrait" className={classes.image} />
