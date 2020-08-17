@@ -120,7 +120,8 @@ export const FrontPageView = props => {
                                     <Box textAlign="left" paddingLeft="8px" paddingRight="8px" mt="16px">
                                         <Typography variant="body1">
                                             I'm a 22 year old man from Oslo with a great passion about coding. I have always been interested in computers, but started with development/coding in 2015. And I have not been looking back since.
-                                            Currenlty I'm spending my time as a full-time-student at NTNU, while working as a teaching assistant in the subjects Databases and Introductory Programming for Teachers.
+                                            Currently I'm spending my time as a full-time-student at NTNU, while working as a teaching assistant in the subjects Databases and Introductory Programming for Teachers. I have also been an teaching
+                                            assistant in the subjects Programming 1 and Programming 2.
                                         </Typography>
                                         <br />
                                         <Typography variant="h6">
