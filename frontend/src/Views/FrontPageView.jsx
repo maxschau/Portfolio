@@ -15,6 +15,7 @@ import LocalAirportIcon from '@material-ui/icons/LocalAirport';
 
 
 
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
@@ -54,7 +55,8 @@ export const FrontPageView = props => {
     const matches = useMediaQuery('(min-width:600px)'); //if true => bigger than 600px
     const matchesXS = useMediaQuery('(min-width:350px)');
 
-    const Portrait = require("../Assets/Images/Portrett.jpg");
+    //const Portrait = require("../Assets/Images/Portrett.jpg");
+    const Portrait = require("../Assets/Images/portrett2.jpg");
 
     const [value, setValue] = React.useState(0);
 
