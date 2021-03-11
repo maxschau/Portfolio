@@ -21,7 +21,7 @@ function ImageLink(props) {
     const classes = useStyles();
     return (
         <div className={classes.container}>
-            {!props.disabled ? <a href={props.link} target="_blank"><img src={imageURL} alt="GitLink" className={classes.image} /></a> : <></>}
+            {!props.disabled ? <a href={props.link} target="_blank"><img src={imageURL.default} alt="GitLink" className={classes.image} /></a> : <></>}
         </div>
     )
 }

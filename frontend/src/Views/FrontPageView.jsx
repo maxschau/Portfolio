@@ -44,8 +44,7 @@ export const FrontPageView = (props) => {
   const matches = useMediaQuery('(min-width:600px)'); // if true => bigger than 600px
   const matchesXS = useMediaQuery('(min-width:350px)');
 
-  // const Portrait = require("../Assets/Images/Portrett.jpg");
-  const Portrait = require('../Assets/Images/portrett2.jpg');
+  const portrait = require('../Assets/Images/portrett2.jpg');
 
   const [value, setValue] = React.useState(0);
 
@@ -78,7 +77,7 @@ export const FrontPageView = (props) => {
                   </Box>
                 </Grid>
                 <Grid className={classes.pictureBox} item sm={3} xs={12}>
-                  <img alt='Portrait' className={classes.image} src={Portrait} />
+                  <img alt='Portrait' className={classes.image} src={portrait.default} />
                 </Grid>
               </Grid>
             </Grid>
@@ -117,10 +116,10 @@ export const FrontPageView = (props) => {
                 <Box>
                   <Box mt='16px' paddingLeft='8px' paddingRight='8px' textAlign='left'>
                     <Typography variant='body1'>
-                      I am a 22 year old man from Oslo with a great passion about coding. I have always been interested in computers, but started with
+                      I am a 23 year old man from Oslo with a great passion about coding. I have always been interested in computers, but started with
                       development/coding in 2015. And I have not been looking back since. Currently spending my time as a full-time-student at NTNU, while
-                      working as a teaching assistant in the subjects Databases and Introductory Programming for Teachers. I have also been an teaching
-                      assistant in the subjects Programming 1 and Programming 2.
+                      working as a teaching assistant in the subjects Applied Programming for Teachers and Basic programmeing with Python I have also been an teaching
+                      assistant in the subjects Programming 1, Programming 2, Databases and Introductory Programming for Teachers.
                     </Typography>
                     <br />
                     <Typography variant='h6'>Interests:</Typography>

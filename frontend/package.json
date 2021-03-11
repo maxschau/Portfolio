@@ -20,7 +20,7 @@
     "react-dark-mode-toggle": "0.0.5",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.3.1",
+    "react-scripts": "4.0.3",
     "styled-components": "^5.1.1",
     "typewriter-effect": "^2.13.1",
     "ua-parser-js": "^0.7.21"
@@ -32,11 +32,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "firebase deploy",
-    "lint": "eslint --fix .",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -51,20 +47,6 @@
     ]
   },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.15.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-babel": "^9.0.0",
-    "eslint-config-google": "^0.14.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-babel": "^5.3.1",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jest": "^24.0.2",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^4.1.2",
-    "eslint-plugin-simple-import-sort": "^5.0.3",
-    "eslint-plugin-standard": "^4.0.1",
     "lint-staged": "^10.4.0",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
