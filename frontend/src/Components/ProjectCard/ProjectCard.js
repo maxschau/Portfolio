@@ -8,9 +8,9 @@ import ImageLink from '../ImageLink/ImageLink.js';
 function ProjectCard(props) {
   const imageURL = require(`../..//Assets/Images/${props.image}`);
   console.log(imageURL);
-  console.log("hei")
+  console.log('hei');
   const classes = useStyles();
-  const matches = useMediaQuery('(min-width:900px)'); 
+  const matches = useMediaQuery('(min-width:900px)');
   return (
     <Box display='flex' mb='40px' mt='16px' padding='8px' width='100%'>
       <Box display='flex' flex='1' mr={matches ? '0px' : '12px'}>

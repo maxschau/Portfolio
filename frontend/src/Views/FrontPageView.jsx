@@ -12,6 +12,7 @@ import EducationCard from '../Components/EducationCard/EducationCard';
 import ProjectCard from '../Components/ProjectCard/ProjectCard';
 import { education } from '../education.js';
 import { projects } from '../projects.js';
+import getAge from "get-age";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -41,15 +42,16 @@ function a11yProps(index) {
 }
 export const FrontPageView = (props) => {
   const classes = useStyles();
-  const matches = useMediaQuery('(min-width:600px)'); // if true => bigger than 600px
+  const matches = useMediaQuery('(min-width:600px)');
   const matchesXS = useMediaQuery('(min-width:350px)');
 
   const portrait = require('../Assets/Images/portrett2.jpg');
+  const age = getAge("1997-12-12");
 
-  const [value, setValue] = React.useState(0);
+  const [choosenTab, setChoosenTab] = React.useState(0);
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    setChoosenTab(newValue);
   };
 
   return (
@@ -100,26 +102,26 @@ export const FrontPageView = (props) => {
                 indicatorColor='primary'
                 onChange={handleChange}
                 style={{ marginTop: '8px', backgroundColor: '#281862', color: 'white' }}
-                value={value}>
+                value={choosenTab}>
                 <Tab label='Education' style={{ fontSize: matchesXS ? '14px' : '10px' }} {...a11yProps(0)} />
                 <Tab label='About me' style={{ fontSize: matchesXS ? '14px' : '10px' }} {...a11yProps(1)} />
                 <Tab label='Projects' style={{ fontSize: matchesXS ? '14px' : '10px' }} {...a11yProps(2)} />
               </Tabs>
-              <TabPanel index={0} value={value}>
+              <TabPanel index={0} value={choosenTab}>
                 <Box>
                   {education.map((edu) => {
                     return <EducationCard degree={edu.degree} key={edu.degree} school={edu.school} year={edu.year} />;
                   })}
                 </Box>
               </TabPanel>
-              <TabPanel index={1} value={value}>
+              <TabPanel index={1} value={choosenTab}>
                 <Box>
                   <Box mt='16px' paddingLeft='8px' paddingRight='8px' textAlign='left'>
                     <Typography variant='body1'>
-                      I am a 23 year old man from Oslo with a great passion about coding. I have always been interested in computers, but started with
+                      {`I am a ${age} year old man from Oslo with a great passion about coding. I have always been interested in computers, but started with
                       development/coding in 2015. And I have not been looking back since. Currently spending my time as a full-time-student at NTNU, while
-                      working as a teaching assistant in the subjects Applied Programming for Teachers and Basic programmeing with Python I have also been an teaching
-                      assistant in the subjects Programming 1, Programming 2, Databases and Introductory Programming for Teachers.
+                      working as a teaching assistant in the subjects Applied Programming for Teachers and Basic programmeing with Python I have also been an
+                      teaching assistant in the subjects Programming 1, Programming 2, Databases and Introductory Programming for Teachers.`}
                     </Typography>
                     <br />
                     <Typography variant='h6'>Interests:</Typography>
@@ -130,7 +132,7 @@ export const FrontPageView = (props) => {
                   </Box>
                 </Box>
               </TabPanel>
-              <TabPanel index={2} value={value}>
+              <TabPanel index={2} value={choosenTab}>
                 <Box>
                   {projects.map((project) => {
                     return (

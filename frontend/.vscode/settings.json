@@ -1,19 +1,17 @@
 {
-    "C_Cpp.updateChannel": "Insiders",
-    "workbench.iconTheme": "vscode-icons",
-    "code-runner.runInTerminal": true,
-    "window.zoomLevel": 0,
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
-    },
-    "editor.formatOnSave": true,
-    "[javascript]": {
-      "editor.formatOnSave": false
-    },
-    "[javascriptreact]": {
-      "editor.formatOnSave": false
-    }
-  
-  
+  "C_Cpp.updateChannel": "Insiders",
+  "workbench.iconTheme": "vscode-icons",
+  "code-runner.runInTerminal": true,
+  "window.zoomLevel": 0,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  }
 }
