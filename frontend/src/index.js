@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
-import NavBar from './Components/NavBar/NavBar';
+import NavBar from './components/NavBar/NavBar';
 import FrontPageView from './Views/FrontPageView';
 import './index.css';
 

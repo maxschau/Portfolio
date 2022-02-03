@@ -37,7 +37,7 @@ function NavBar() {
           <Typography variant='h4' className={classes.title}>
             MTS
           </Typography>
-          <Button color='black' href={CV} type='application/pdf' target='_blank' className={classes.menuButton}>
+          <Button color='black' href={"https://max-sin-cv.herokuapp.com/"} target='_blank' className={classes.menuButton}>
             CV
           </Button>
           <Button color='black' href={'https://github.com/maxschau'} className={classes.menuButton} target={'_blank'}>

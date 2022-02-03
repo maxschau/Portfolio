@@ -8,8 +8,8 @@ import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import EducationCard from '../Components/EducationCard/EducationCard';
-import ProjectCard from '../Components/ProjectCard/ProjectCard';
+import EducationCard from '../components/EducationCard/EducationCard';
+import ProjectCard from '../components/ProjectCard/ProjectCard';
 import { education } from '../education.js';
 import { projects } from '../projects.js';
 import getAge from "get-age";
