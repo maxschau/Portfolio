@@ -74,7 +74,7 @@ export const FrontPageView = (props) => {
                   <Box mt='16px'>
                     <Typography variant='h7'>
                       Full-stack developer <br />
-                      Currently studying Computer Engineering at Norges teknisk-naturvitenskapelige universitet
+                      Currently studying Computer Science at Norges teknisk-naturvitenskapelige universitet
                     </Typography>
                   </Box>
                 </Grid>
