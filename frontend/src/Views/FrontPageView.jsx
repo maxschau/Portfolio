@@ -69,7 +69,7 @@ export const FrontPageView = (props) => {
                       👋
                     </span>
                   </Typography>
-                  <Typography variant='h4'>I am Max Torre Schau</Typography>
+                  <Typography variant='h4'>Max Torre Schau</Typography>
                   <Box borderTop='2px solid white' marginTop='8px' width='25%'></Box>
                   <Box mt='16px'>
                     <Typography variant='h7'>
